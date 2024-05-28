@@ -81,3 +81,10 @@ console.log("Dear user, your login is " + login + ", your email is " + email + "
 
 // 8*. Write a script that calculates the number of seconds in an hour , in a day , in a month , 
 // records the results in the corresponding variables, and displays their values on the screen.
+
+let minute = 60;
+let hour = 60;
+let day = 24;
+let month = 30;
+
+console.log(minute * hour * day * month);
