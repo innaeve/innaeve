@@ -51,6 +51,23 @@ console.log(isAdult);
 // Determine the type of each variable.
 // Display the values of the variables in the console , according to their type , in the following order : Number , Boolean , String .
 // Create 2 arbitrary variables of type Null and Undefined respectively . Output their type to the console.
+
+let myName = "Inna";
+let mySurname = "Dogan";
+let group = "TA w/ JS";
+let yearsInSoftserve = 3;
+let birthYear = undefined;
+let isMarried = true;
+let longLiveTheKing = null;
+
+console.log(typeof yearsInSoftserve);
+console.log(typeof isMarried);
+console.log(typeof myName);
+console.log(typeof mySurname);
+console.log(typeof group);
+console.log(typeof birthYear);
+console.log(typeof longLiveTheKing);
+
 	
 // 7. Using the prompt() function, write a script that sequentially asks the user for a login, email, and password, 
 // and displays a message with the entered data on the screen. 
@@ -62,4 +79,5 @@ let password = prompt("Type your password, please");
 
 console.log("Dear user, your login is " + login + ", your email is " + email + ", and your password is " + password + ".");
 
-// 8*. Write a script that calculates the number of seconds in an hour , in a day , in a month , records the results in the corresponding variables, and displays their values on the screen.
+// 8*. Write a script that calculates the number of seconds in an hour , in a day , in a month , 
+// records the results in the corresponding variables, and displays their values on the screen.
