@@ -55,7 +55,7 @@ let cities = ["Rome", "Lviv", "Warsaw"];
 // Result:
 // " Rome * Lviv * Warsaw "
 
-alert(cities[0] + " * " + cities[1] + " * " + cities[2]);
+alert(cities.join(" * "));
 
 // 5. Ask user a question about reaching the age of majority. Record the result in the isAdult variable.
 // Depending on the received value, display the appropriate message about the person's status. 
@@ -85,23 +85,31 @@ if (age2 > 18) {
 // Output the result of calculating the area of the triangle to the console with an accuracy of 3 decimal places 
 // (for example: 8.42355465 = > 8.424).
 
-let side1 = prompt("Enter length for the side 1");
-let side2 = prompt("Enter length for the side 2");
-let side3 = prompt("Enter length for the side 3");
-let sides = (side1 + side2 + side3);
-let area = Math.sqrt(sides * ((sides - side1) * (sides - side2) * (sides - side3)));
-console.log(side3 === Math.sqrt(side1 ** 2 + side2 ** 2));
+let a = prompt("Enter length for the side 1");
+let b = prompt("Enter length for the side 2");
+let c = prompt("Enter length for the side 3");
 
-if (side1 > 0) {
-    alert("All fine");
-} else if (side2 > 0) {
-    alert("All fine");
-} else if (side3 > 0) {
-    alert("All fine");
-} else {
-    alert("Incorrect data");
+const semiPerim = (a + b + c) / 2;
+const area = Math.sqrt(semiPerim * ((semiPerim - a) * (semiPerim - b) * (semiPerim - c)));
+console.log("The triangle's area is: " + (area.toFixed(3)));
+
+const isRectangular = (a, b, c) => {
+   const opt1 = (a * a) === (b * b) + (c * c);
+   const opt2 = (b * b) === (a * a) + (c * c);
+   const opt3 = (c * c) === (a * a) + (b * b);
+   return opt1 || opt2 || opt3;
 }
-console.log(Math.round(area, 3));
+console.log("Is the triangle rectangular? - " + isRectangular(a, b, c));
+
+if (a > 0) {
+    alert("Values are fine!");
+} else if (b > 0) {
+    alert("Values are fine!");
+} else if (c > 0) {
+    alert("Values are fine!");
+} else {
+    alert("You've entered incorrect data!");
+}
 
 // 7. Write a conditional construction that, depending on the time of day, will display the appropriate greeting.
 // You need to get the real time of day from the system. Do it in 2 ways through 2 different conditional operators.
@@ -121,4 +129,26 @@ if (time >= 23 && time < 5) {
     alert("Good day");
 } else {
     alert("Good evening");
+}
+
+// or
+
+let greeting = time >= 23 && time < 5 ? "Good night" : time >= 5 && time < 11 ? "Good morning" : time >= 11 && time < 17 ? "Good day" : "Good evening";
+alert(greeting);
+
+// or
+
+switch (time) {
+  case time >= 23 && time < 5:
+    alert("Good night");
+    break;
+  case time >= 5 && time < 11:
+    alert("Good morning");
+    break;
+  case time >= 11 && time < 17:
+    alert("Good day");
+    break;
+  default:
+    alert("Good evening");
+    break;
 }
